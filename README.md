@@ -1,17 +1,18 @@
 <div align="center">
-    <img src="https://binbashar.github.io/terraform-aws-cost-billing-alarm/figures/binbash.png" alt="drawing" width="350"/>
+    <img src="https://binbashar.github.io/terraform-aws-sec-groups/figures/binbash.png" alt="drawing" width="350"/>
 </div>
 <div align="right">
-  <img src="https://binbashar.github.io/terraform-aws-cost-billing-alarm/figures/binbash-leverage-terraform.png" alt="leverage" width="230"/>
+  <img src="https://binbashar.github.io/terraform-aws-sec-groups/figures/binbash-leverage-terraform.png" alt="leverage" width="230"/>
 </div>
 
 # AWS VPC Security Group: terraform-aws-sec-groups
 
 Terraform module which creates EC2-VPC security group within a specific VPC on AWS.
-Please check the **input parameters** for a better understanding.
+Please check the **input parameters** for a better understanding of it.
+
 It was developed in order to work in composition with the following terraform modules:
 - https://github.com/binbashar/terraform-aws-pritunl-openvpn
--
+- https://github.com/binbashar/terraform-aws-jenkins-vault
 
 ## Releases
 - **Versions:** `<= 0.x.y` (Terraform 0.11.x compatible)
@@ -43,7 +44,6 @@ It was developed in order to work in composition with the following terraform mo
 
 
 ## Examples
-
 ### For Private Security Groups
 #### sec-group-private-tcp
 ```terraform

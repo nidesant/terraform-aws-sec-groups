@@ -4,7 +4,7 @@ resource "aws_security_group" "default" {
 
   vpc_id = "${var.vpc_id}"
 
-  tags   = "${var.tags}"
+  tags = "${var.tags}"
 }
 
 resource "aws_security_group_rule" "egress" {
@@ -18,7 +18,7 @@ resource "aws_security_group_rule" "egress" {
 }
 
 resource "aws_security_group_rule" "tcp" {
-  count             = "${var.tcp_ports == "default_null" ? 0 : length(split(",", var.tcp_ports))}"
+  count             = "${var.tcp_ports == "" ? 0 : length(split(",", var.tcp_ports))}"
   type              = "ingress"
   from_port         = "${element(split(",", var.tcp_ports), count.index)}"
   to_port           = "${element(split(",", var.tcp_ports), count.index)}"
@@ -29,7 +29,7 @@ resource "aws_security_group_rule" "tcp" {
 }
 
 resource "aws_security_group_rule" "udp" {
-  count             = "${var.udp_ports == "default_null" ? 0 : length(split(",", var.udp_ports))}"
+  count             = "${var.udp_ports == "" ? 0 : length(split(",", var.udp_ports))}"
   type              = "ingress"
   from_port         = "${element(split(",", var.udp_ports), count.index)}"
   to_port           = "${element(split(",", var.udp_ports), count.index)}"

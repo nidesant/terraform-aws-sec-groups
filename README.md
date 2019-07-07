@@ -28,8 +28,8 @@ It was developed in order to work in composition with the following terraform mo
 | cidrs | A comma separated list of CIDR segmemnts eg: [172.16.0.0/20,0.0.0.0/0] | list | n/a | yes |
 | security\_group\_name | The security group name | string | n/a | yes |
 | tags | A mapping of tags to assign to all resources | map | `<map>` | no |
-| tcp\_ports | A comma separated list of TCP ports from 1-65536 eg: 22,80,443 | string | `"default_null"` | no |
-| udp\_ports | A comma separated list of UDP ports from 1-65536 eg: 5001,5002,5003 | string | `"default_null"` | no |
+| tcp\_ports | A comma separated list of TCP ports from 1-65536 eg: 22,80,443 | string | `""` | no |
+| udp\_ports | A comma separated list of UDP ports from 1-65536 eg: 5001,5002,5003 | string | `""` | no |
 | vpc\_id | The VPC id to create the security group in | string | n/a | yes |
 
 ## Outputs
@@ -41,7 +41,6 @@ It was developed in order to work in composition with the following terraform mo
 | name | The name of the security group |
 | owner\_id | The owner ID of the security group |
 | vpc\_id | Sec group VPC id |
-
 
 ## Examples
 ### For Private Security Groups

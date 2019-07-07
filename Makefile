@@ -52,16 +52,19 @@ lint: ## lint: TFLint is a Terraform linter for detecting errors that can not be
 release-patch: ## releasing patch (eg: 0.0.1 -> 0.0.2) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
 	${GIT_SEMTAG_CMD_PREFIX} get
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.git;\
 	${GIT_SEMTAG_CMD_PREFIX} final -s patch
 
 release-minor: ## releasing minor (eg: 0.0.2 -> 0.1.0) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
 	${GIT_SEMTAG_CMD_PREFIX} get
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.git;\
 	${GIT_SEMTAG_CMD_PREFIX} final -s minor
 
 release-major: ## releasing major (eg: 0.1.0 -> 1.0.0) based on semantic tagging script for Git
 	# pre-req -> https://github.com/pnikosis/semtag
 	${GIT_SEMTAG_CMD_PREFIX} get
+	sudo chown -R ${LOCAL_OS_USER}:${LOCAL_OS_USER} ./.git;\
 	${GIT_SEMTAG_CMD_PREFIX} final -s major
 
 changelog-init: ## git-chglog (https://github.com/git-chglog/git-chglog) config initialization -> ./.chglog

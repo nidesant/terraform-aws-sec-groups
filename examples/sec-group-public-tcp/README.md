@@ -38,8 +38,6 @@ when you don't need these resources.
 | owner\_id | The owner ID of the security group |
 | vpc\_id | Sec group VPC id |
 
-The module outputs one block, sns_topic. Access it like this:
-
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ### For Private Security Groups
